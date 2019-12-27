@@ -1,0 +1,18 @@
+const mongoose = require('mongoose');
+const UserSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    }
+});
+const user1 = mongoose.model('pranav', UserSchema);
+exports.User = user1;
